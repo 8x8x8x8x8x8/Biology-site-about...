@@ -21,6 +21,12 @@ const quiz = [
     answer: 0
   },
   {
+    q: "What is this?",
+    choices: ["DNA", "RNA", "Protein", "Lipid"],
+    answer: 1,
+    image: "/img/rna.png" // change path if needed
+  },
+  {
     q: "What is a polymer?",
     choices: [
       "A molecule that stores genetic information",
