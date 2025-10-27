@@ -8,7 +8,7 @@ const quiz = [
     q: "What is this?",
     choices: ["DNA", "RNA", "Protein", "Lipid"],
     answer: 1,
-    image: "/img/rna.png" // change path if needed
+    image: "/img/f0238645-rna_molecules_web.png" // change path if needed
   },
   {
     q: "What is the monomer of proteins?",
