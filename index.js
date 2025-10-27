@@ -170,8 +170,39 @@ const quiz = [
       "Photosynthesis reaction"
     ],
     answer: 0
+  },
+  {
+    q: "Which macromolecule helps speed up chemical reactions in the body?",
+    choices: ["Proteins", "Carbohydrates", "Lipids", "Nucleic acids"],
+    answer: 0
+  },
+  {
+    q: "What are the main elements in macromolecules?",
+    choices: [
+      "Carbon, hydrogen, oxygen, and sometimes nitrogen",
+      "Helium",
+      "Calcium",
+      "Sodium"
+    ],
+    answer: 0
+  },
+  {
+    q: "Which macromolecule is the main part of cell membranes?",
+    choices: ["Lipids", "Proteins", "Carbohydrates", "Nucleic acids"],
+    answer: 0
+  },
+  {
+  q: "What are proteins made of?",
+  choices: ["Amino acids", "Fatty acids", "Nucleotides", "Sugars"],
+  answer: 0
+},
+  {
+    q: "Which macromolecule includes both DNA and RNA?",
+    choices: ["Nucleic acids", "Proteins", "Carbohydrates", "Lipids"],
+    answer: 0
   }
 ];
+
 
 let question = 0;   // current question index
 let correct  = 0;   // number correct
