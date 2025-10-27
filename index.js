@@ -1,22 +1,22 @@
 const quiz = [
   // --- General Terms ---
   {
-    q: "What is a macromolecule?",
+    q: "What's a macromolecule?",
     choices: [
-      "A small molecule used for energy",
-      "A large molecule made of smaller repeating units",
+      "It's mainly used for energy",
+      "A big molecule made of small units",
       "A molecule made only of lipids",
-      "A molecule that cannot be broken down"
+      "A molecule that can't be broken down"
     ],
     answer: 1
   },
   {
-    q: "What is a monomer?",
+    q: "What's a monomer?",
     choices: [
-      "A small building block that forms polymers",
-      "A long chain of macromolecules",
+      "A small part that joins with others to make a more bigger molecule",
+      "A big molecule made out of smaller ones",
       "A type of carbohydrate",
-      "An enzyme that speeds up reactions"
+      "An enzyme that makes reactions faster"
     ],
     answer: 0
   },
@@ -24,63 +24,63 @@ const quiz = [
     q: "What is this?",
     choices: ["DNA", "RNA", "Protein", "Lipid"],
     answer: 1,
-    image: "/img/rna.png" // change path if needed
+    image: "/img/f0238645-rna_molecules_web.png"
   },
   {
-    q: "What is a polymer?",
+    q: "What's a polymer?",
     choices: [
-      "A molecule that stores genetic information",
-      "A large molecule made of many monomers bonded together",
+      "A molecule that keeps genetic information",
+      "A big molecule made out of many monomers bonded together",
       "A lipid that makes up membranes",
-      "A type of simple sugar"
+      "A type of sugar"
     ],
     answer: 1
   },
 
   // --- Carbohydrates ---
   {
-    q: "What is ATP’s main function in the cell?",
+    q: "What's ATP’s main function in the cell?",
     choices: [
-      "Stores genetic information",
-      "Provides immediate energy for cellular work",
-      "Builds cell membranes",
+      "Keeps genetic information",
+      "Gives instant energy for cellular work",
+      "Creates cell membranes",
       "Acts as a structural polysaccharide"
     ],
     answer: 1
   },
   {
-    q: "What is a polysaccharide?",
+    q: "What's a polysaccharide?",
     choices: [
-      "A polymer made of many sugar units",
-      "A single sugar molecule",
-      "A lipid used for insulation",
-      "A molecule that stores DNA"
+      "A polymer made out of many sugar units",
+      "A sugar molecule",
+      "A lipid",
+      "A molecule that keeps DNA"
     ],
     answer: 0
   },
   {
-    q: "Which of the following is a monosaccharide?",
+    q: "Which one is a monosaccharide?",
     choices: ["Glucose", "Starch", "Cellulose", "Glycogen"],
     answer: 0
   },
 
   // --- Proteins ---
   {
-    q: "What is the monomer (building block) of proteins?",
+    q: "What's the monomer of proteins?",
     choices: ["Amino acids", "Fatty acids", "Nucleotides", "Monosaccharides"],
     answer: 0
   },
   {
-    q: "What type of bond links amino acids together in a protein?",
+    q: "What type of bond connects amino acids together in a protein?",
     choices: ["Hydrogen bond", "Peptide bond", "Ionic bond", "Glycosidic bond"],
     answer: 1
   },
   {
-    q: "What does the R group of an amino acid determine?",
+    q: "What does the R group of an amino acid do?",
     choices: [
       "The amino acid’s shape and chemical properties",
       "The number of peptide bonds",
-      "The type of carbohydrate formed",
+      "The type of carbohydrate created",
       "The DNA sequence it codes for"
     ],
     answer: 0
@@ -88,22 +88,22 @@ const quiz = [
 
   // --- Lipids ---
   {
-    q: "Which type of fatty acid has double bonds and is usually liquid at room temperature?",
+    q: "Which type of fatty acid has double bonds?",
     choices: ["Saturated", "Unsaturated", "Hydrogenated", "Trans fat"],
     answer: 1
   },
   {
-    q: "Which type of fatty acid has no double bonds and is usually solid at room temperature?",
+    q: "Which type of fatty acid has no double bonds?",
     choices: ["Saturated", "Unsaturated", "Glycerol", "Essential"],
     answer: 0
   },
   {
-    q: "What are the building blocks of most lipids?",
+    q: "What makes up most lipids?",
     choices: [
       "Glycerol and fatty acids",
       "Amino acids and nucleotides",
       "Monosaccharides and ATP",
-      "Phosphates and nitrogen bases"
+      "Phosphates"
     ],
     answer: 0
   },
@@ -115,45 +115,44 @@ const quiz = [
     answer: 0
   },
   {
-    q: "What molecule contains the instructions for making proteins?",
+    q: "What kind of molecule has the instructions for creating proteins?",
     choices: ["DNA", "RNA", "ATP", "Phospholipids"],
     answer: 0
   },
   {
-    q: "What is the function of RNA?",
+    q: "What is the main function of RNA?",
     choices: [
       "To carry genetic instructions from DNA to ribosomes",
-      "To store genetic information permanently",
-      "To catalyze condensation reactions",
+      "To keep genetic information permanently",
+      "To cause condensation reactions",
       "To form the cell wall"
     ],
-    answer: 0,
-    image: "img/rna.png"
+    answer: 0
   },
   {
-    q: "What is the backbone of a DNA strand made of?",
+    q: "What is the DNA backbone made of?",
     choices: [
       "Sugar and phosphate groups",
       "Amino acids and R groups",
       "Lipids and proteins",
-      "Nitrogenous bases only"
+      "Nitrogenous bases"
     ],
     answer: 0
   },
   {
-    q: "Which of the following are nitrogenous bases found in nucleic acids?",
-    choices: [
-      "Adenine, thymine, cytosine, guanine, and uracil",
-      "Ribose, glucose, fructose, and sucrose",
-      "Lysine, valine, and serine",
-      "Saturated and unsaturated"
-    ],
-    answer: 0
-  },
+  q: "Which of these are the bases in DNA and RNA?",
+  choices: [
+    "Adenine, thymine, cytosine, guanine, and uracil",
+    "Sugars like glucose and sucrose",
+    "Amino acids like lysine and valine",
+    "Types of fats"
+  ],
+  answer: 0
+},
 
   // --- Mono vs Di vs Poly & Reactions ---
   {
-    q: "A condensation (dehydration synthesis) reaction does what?",
+    q: "A condensation reaction does what?",
     choices: [
       "Breaks polymers into monomers by adding water",
       "Builds polymers by removing water",
@@ -163,7 +162,7 @@ const quiz = [
     answer: 1
   },
   {
-    q: "The opposite of a condensation reaction is called a:",
+    q: "The opposite of a condensation reaction is called a",
     choices: [
       "Hydrolysis reaction",
       "Endergonic reaction",
