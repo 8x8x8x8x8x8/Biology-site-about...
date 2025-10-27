@@ -8,7 +8,7 @@ const quiz = [
     q: "What is this?",
     choices: ["DNA", "RNA", "Protein", "Lipid"],
     answer: 1,
-    image: "/img/rna.png"
+    image: "/img/rna.png" // change path if needed
   },
   {
     q: "What is the monomer of proteins?",
@@ -18,38 +18,42 @@ const quiz = [
 ];
 
 let question = 0;   // current question index
-let correct = 0;    // correct answers count
-let incorrect = 0;  // incorrect answers count
+let correct  = 0;   // number correct
+let incorrect = 0;  // number incorrect
 
-const qText = document.getElementById("question-text");
-const btns = document.getElementById("buttons");
+const qText    = document.getElementById("question-text");
+const btns     = document.getElementById("buttons");
 const feedback = document.getElementById("feedback");
-const stats = document.getElementById("stats");
-const imgEl = document.getElementById("image");
+const stats    = document.getElementById("stats");
+const imgEl    = document.getElementById("image");
+const restart  = document.getElementById("restart");
 
 function showQuestion() {
-  feedback.textContent = "";
-  stats.textContent = `Question ${question + 1} of ${quiz.length} | Correct: ${correct} | Incorrect: ${incorrect}`;
   const item = quiz[question];
+  feedback.textContent = "";
   qText.textContent = item.q;
+  stats.textContent = `Question ${question + 1} of ${quiz.length} | Correct: ${correct} | Incorrect: ${incorrect}`;
 
-  if (imgEl) {
-    if (item.image) {
-      imgEl.src = item.image;
-      imgEl.style.display = "block";
-    } else {
-      imgEl.style.display = "none";
-      imgEl.removeAttribute("src");
-    }
+  // image (only if provided)
+  if (item.image) {
+    imgEl.src = item.image;
+    imgEl.style.display = "block";
+  } else {
+    imgEl.style.display = "none";
+    imgEl.removeAttribute("src");
   }
 
+  // render choices
   btns.innerHTML = "";
   item.choices.forEach((c, i) => {
     const b = document.createElement("button");
     b.textContent = c;
-    b.onclick = () => checkAnswer(i);
+    b.addEventListener("click", () => checkAnswer(i));
     btns.appendChild(b);
   });
+
+  // hide restart while quiz is active
+  restart.style.display = "none";
 }
 
 function checkAnswer(i) {
@@ -61,19 +65,40 @@ function checkAnswer(i) {
     incorrect++;
     feedback.textContent = "❌ Incorrect.";
   }
+
+  // advance
   question++;
   if (question < quiz.length) {
-    setTimeout(showQuestion, 800);
+    // brief pause so students can see feedback
+    setTimeout(showQuestion, 700);
   } else {
     endQuiz();
   }
 }
 
 function endQuiz() {
-  qText.textContent = "Quiz finished!";
+  const total = quiz.length;
+  const percent = Math.round((correct / total) * 100);
+
+  // clear UI & show summary
   btns.innerHTML = "";
-  if (imgEl) imgEl.style.display = "none";
-  stats.textContent = `Final Score → Correct: ${correct}, Incorrect: ${incorrect}`;
+  imgEl.style.display = "none";
+  qText.textContent = "Quiz finished!";
+  feedback.textContent = "";
+  stats.textContent = `Final Score → Correct: ${correct}, Incorrect: ${incorrect} (${percent}%)`;
+
+  // show restart
+  restart.style.display = "inline-block";
 }
 
+function resetQuiz() {
+  question = 0;
+  correct = 0;
+  incorrect = 0;
+  showQuestion();
+}
+
+restart.addEventListener("click", resetQuiz);
+
+// start
 showQuestion();
